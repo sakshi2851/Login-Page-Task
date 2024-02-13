@@ -1,0 +1,59 @@
+body{
+  background-image: url("https://img.freepik.com/premium-photo/gradient-defocused-abstract-photo-smooth-blue-color-background_49683-4895.jpg");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+.button-container {
+    text-align: center;
+  }
+
+button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-right: 26px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+  }
+  button {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #00d948;
+  }
+
+  h1{
+      text-align: center;
+      position: fixed;
+      top: 10%;
+      left: 40%;
+  }
+  #login{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 10px 20px;
+    float: right;
+    
+    
+  }
+  #usercredential{
+    position: fixed;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+  }
+  #userinfo{
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+  }

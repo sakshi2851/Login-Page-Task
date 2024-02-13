@@ -1,0 +1,25 @@
+<h1>User Info Form</h1>
+<form name="google-sheet" [formGroup]="userInfoForm">
+    <input type="text" name="firstName" formControlName="firstName"  placeholder="firstName" />
+    <input type="text" name="lastName" formControlName="lastName" placeholder="lastName" />
+    <input type="email" name="email" formControlName="email" placeholder="email" />
+    <input type="password" name="password" formControlName="password" placeholder="password" />
+    <input type="text" name="mobileNumber" formControlName="mobileNumber" placeholder="mobileNumber" pattern="[0-9]{10}">
+    <input type="text" name="userType" formControlName="userType" placeholder="userType" list="usertype">
+    <datalist id="usertype">
+        <option value="A">A</option>
+        <option value="U">U</option>
+    </datalist>
+    <a routerLink="/"><button (click)="onClickVerifyInfo()">Show Existing User</button></a>
+</form>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwfCU3ohRaz2zeMYM7fXoBX1B5EUgmboLieTuBfMFwpkE_ry2k91J034vBDdXY1XHfn/exec'
+    const form = document.forms['google-sheet']
+
+    form.addEventListener('submit', e =>{
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)} )
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>

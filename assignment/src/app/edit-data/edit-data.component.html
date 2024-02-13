@@ -1,0 +1,48 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="btn btn-primary" routerLink="/list-data">Home</button>
+    </div>
+  </nav>
+  
+  <div class="container mt-5">
+    <form [formGroup]="updateSheetForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">firstName</label>
+        <input type="text" class="form-control" id="firstname" placeholder="firstname" formControlName="firstName">
+      </div>
+  
+      <div class="mb-3">
+        <label for="lastName" class="form-label">lastName</label>
+        <input type="text" class="form-control" id="lastName" placeholder="lastName" formControlName="lastName">
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">email</label>
+        <input type="email" class="form-control" id="email" placeholder="email" formControlName="email">
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">password</label>
+        <input type="password" class="form-control" id="password" placeholder="password" formControlName="password">
+      </div>
+
+      <div class="mb-3">
+        <label for="mobileNumber" class="form-label">mobileNumber</label>
+        <input type="text" class="form-control" id="mobileNumber" placeholder="mobileNumber" formControlName="mobileNumber">
+      </div>
+
+      <div class="mb-3">
+        <label for="userType" class="form-label">UserType</label>
+        <input type="text" name="userType" formControlName="userType" placeholder="userType" list="usertype">
+        <datalist id="usertype">
+            <option value="A">A</option>
+            <option value="U">U</option>
+        </datalist>
+    </div>
+  
+      <button [disabled]="updateSheetForm.invalid || updateSheetForm.pristine"
+      class="btn btn-success mt-3">Submit</button>
+
+    </form>
+  </div>
+
